@@ -1,0 +1,41 @@
+﻿<Window x:Name="MainWin" x:Class="WPF_ForbiddenWordsFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"        
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="700"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    
+    <Grid>
+        <Image  Stretch="Fill" Source="/fon2.jpg" />
+        <Border MinWidth="400" Margin="50" Background="#FFA4EDD4" VerticalAlignment="Center" Padding="50" MaxWidth="550" CornerRadius="50" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="75" Color="DarkGoldenrod" ShadowDepth="25"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Реєстрація або вхід" Margin="0 0 0 25" FontSize="24" FontWeight="Bold"/>
+                <TextBlock x:Name="example" Margin="0 0 0 25"  FontWeight="Bold"/>
+
+                <Grid Margin="0 0 0 25">
+                    <Button HorizontalAlignment="Left" Content="Реєстрація" Click="Registration_Click"/>
+                    <Button HorizontalAlignment="Center" Content="Забули пароль?" Click="Forget_Click"/>
+                    <Button HorizontalAlignment="Right" Content="       Вхід     " Click="Enter_Click"/>
+                </Grid>
+                <TextBox x:Name="tbLogin" materialDesign:HintAssist.Hint="введіть логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <PasswordBox x:Name="pbPassw1" materialDesign:HintAssist.Hint="введіть пароль" Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}"/>
+                <PasswordBox x:Name="pbPassw2" Visibility="Collapsed" materialDesign:HintAssist.Hint="повторіть пароль" Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}"/>
+                <TextBox x:Name="tbPhone" materialDesign:HintAssist.Hint="введіть номер телефону в форматі XXXXXXXXX" Style="{StaticResource MaterialDesignFilledTextBox}"/>
+                <Border  Background="#FF6DF16D" Padding="7"  CornerRadius="30" Height="43" Margin="20 10 20 5">
+                    <Button x:Name="btnEnt" HorizontalAlignment="Center" Content="    Увійти    " Click="Ent_Click" Visibility="Hidden"/>
+                </Border>
+                <Border  Background="#FF6DF16D" Padding="7"  CornerRadius="30" Height="43" Margin="20 0 20 5">
+                    <Button x:Name="btnReg" HorizontalAlignment="Center" Content="Зареєструватися" Click="Reg_Click" Visibility="Hidden"/>
+                </Border>
+                <Border  Background="#FF6DF16D" Padding="7"  CornerRadius="30" Height="43" Margin="20 0 20 5">
+                    <Button x:Name="btnDlt" HorizontalAlignment="Center" Content="Видалити користувача" Click="Dlt_Click" Visibility="Hidden"/>
+                </Border>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
